@@ -6,8 +6,6 @@ services:
       POSTGRES_DB: chatroom
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
-	  
-	  
     ports:
       - "5455:5432"         # máy local:container — bạn kết nối qua localhost:5432
     volumes:
