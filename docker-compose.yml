@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: chatroom_postgres
+    environment:
+      POSTGRES_DB: chatroom
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+	  
+	  
+    ports:
+      - "5455:5432"         # máy local:container — bạn kết nối qua localhost:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data   # Giữ data khi restart container
+ 
+  redis:
+    image: redis:7-alpine
+    container_name: chatroom_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+ 
+volumes:
+  postgres_data:
+  redis_data:
