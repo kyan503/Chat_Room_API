@@ -1,6 +1,7 @@
 package com.chatroomrealtime.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +11,11 @@ import com.chatroomrealtime.dto.AuthDto;
 import com.chatroomrealtime.service.AuthService;
 
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+
 
 @RestController
 @RequestMapping("/api/auth")
-
+@CrossOrigin(origins = "http://localhost:5173")
 public class AuthController {
     /*
      * @RestController = @Controller + @ResponseBody

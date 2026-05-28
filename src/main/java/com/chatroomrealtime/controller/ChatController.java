@@ -15,13 +15,16 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
- 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.security.Principal;
 import java.time.LocalDateTime;
  
 @Controller
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin(origins = "http://localhost:5173")
+
 /*
  * NGÀY 7: ChatController đầy đủ — có JWT, lưu message vào DB, broadcast.
  * Thay thế ChatController ngày 6.
